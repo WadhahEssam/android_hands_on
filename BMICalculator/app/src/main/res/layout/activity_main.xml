@@ -29,26 +29,27 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-
-
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/radio_button_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:text="Male" />
 
         <RadioButton
+            android:id="@+id/radio_button_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:text="Female" />
 
         <RadioButton
+            android:id="@+id/radio_button_gay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
@@ -64,12 +65,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@id/age_input"
+            android:labelFor="@id/text_input_age"
             android:text="Age"
             android:textSize="12dp" />
 
         <EditText
-            android:id="@+id/age_input"
+            android:id="@+id/text_input_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />
@@ -84,12 +85,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@id/height_input"
+            android:labelFor="@id/text_input_height"
             android:text="Height"
             android:textSize="12dp" />
 
         <EditText
-            android:id="@+id/height_input"
+            android:id="@+id/text_input_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />
@@ -104,17 +105,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@id/weight_input"
+            android:labelFor="@id/text_input_weight"
             android:text="Weight"
             android:textSize="12dp" />
 
         <EditText
-            android:id="@+id/weight_input"
+            android:id="@+id/text_input_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />
 
         <Button
+            android:id="@+id/button_calculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -123,10 +125,11 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/text_input_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Your BMI is 234" />
+        android:text="" />
 
 </LinearLayout>
