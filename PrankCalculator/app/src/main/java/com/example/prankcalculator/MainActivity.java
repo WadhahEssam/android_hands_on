@@ -1,6 +1,7 @@
 package com.example.prankcalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide(); // hide the title bar
 
         setContentView(R.layout.activity_main);
+
+        CardView buttonC = findViewById(R.id.button_c);
+//        buttonC.setCardElevation(20);
+//        buttonC.narg(4, 4, 4, 4);
 
     }
 }
