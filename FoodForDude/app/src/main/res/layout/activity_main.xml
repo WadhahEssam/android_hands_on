@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:textSize="20sp"
+        android:id="@+id/text_app_name"
+        android:textColor="@color/teal_200"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food For Dudes" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/text_app_name"
+        android:id="@+id/card_starters"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:outlineSpotShadowColor="@color/purple_700">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@drawable/some_random_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is a button" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/text_starters"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/text_starters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Starters" />
+</RelativeLayout>
