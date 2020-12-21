@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ProjectViewHolder> {
@@ -30,7 +31,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
     @Override
     public void onBindViewHolder(@NonNull ProjectViewHolder holder, int position) {
         // here we are going to set the values that we need to the item layout.
-        holder.bind(projects[position]);
+        holder.bind(projects[position], position);
     }
 
     // this is the first method that is going to be called.
@@ -44,6 +45,8 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
         private TextView titleTextView;
         private TextView descriptionTextView;
         private ImageView projectImage;
+        private CardView projectCard;
+        private final int DEFAULT_MARGIN = 16;
 
         public ProjectViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,14 +56,26 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
             projectImage = itemView.findViewById(R.id.image_portfolio);
             titleTextView = itemView.findViewById(R.id.text_view_portfolio_title);
             descriptionTextView = itemView.findViewById(R.id.text_view_portfolio_description);
+            projectCard = itemView.findViewById(R.id.card_project);
         }
 
         // this functions is called bind by convention.
-        public void bind(Project project) {
+        public void bind(Project project, int position) {
             // here we are going to set all the texts and images and variables inside of our item layout
             titleTextView.setText(project.getTitle());
             descriptionTextView.setText(project.getDescription());
             projectImage.setImageResource(project.getImage());
+
+            ViewGroup.MarginLayoutParams layoutParams =
+                    (ViewGroup.MarginLayoutParams) projectCard.getLayoutParams();
+
+            if (position == 0) {
+                layoutParams.setMargins(DEFAULT_MARGIN, DEFAULT_MARGIN * 2, DEFAULT_MARGIN, DEFAULT_MARGIN);
+            } else {
+                layoutParams.setMargins(DEFAULT_MARGIN, 0, DEFAULT_MARGIN, DEFAULT_MARGIN);
+            }
+            projectCard.requestLayout();
+
         }
     }
 }
